@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botões Sim e Não</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2c3e50, #673ab7);
+    overflow: hidden;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #buttons-container {
+    display: flex;
+  }
+
+  #nao {
+    margin-left: 10px;
+  }
+
+</style>
+</head>
+<body>
+<div id="buttons-container">
+  <button id="sim">Sim</button>
+  <button id="nao" onmouseover="moveNao()">Não</button>
+</div>
+
+<script>
+function moveNao() {
+  const buttonNao = document.getElementById('nao');
+  const limitX = document.documentElement.clientWidth - buttonNao.clientWidth;
+  const limitY = document.documentElement.clientHeight - buttonNao.clientHeight;
+  const newX = Math.random() * limitX;
+  const newY = Math.random() * limitY;
+  buttonNao.style.left = newX + 'px';
+  buttonNao.style.top = newY + 'px';
+}
+</script>
+</body>
+</html>
